@@ -1,0 +1,120 @@
+@page
+@model BTL_Ninh_Kho.Pages.Warehouse.IndexModel
+@{
+    ViewData["Title"] = "Danh sách Kho hàng";
+}
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Danh sách Kho hàng</h2>
+        <a href="/Warehouse/Create" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Thêm mới
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>TÊN KHO</th>
+                    <th>ĐỊA CHỈ</th>
+                    <th>SỨC CHỨA</th>
+                    <th>DIỆN TÍCH</th>
+                    <th>QUẢN LÝ</th>
+                    <th>TRẠNG THÁI</th>
+                    <th>THAO TÁC</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var warehouse in Model.Warehouses)
+                {
+                    <tr>
+                        <td>@warehouse.ID</td>
+                        <td>@warehouse.Name</td>
+                        <td>@warehouse.Address</td>
+                        <td>@warehouse.Capacity</td>
+                        <td>@warehouse.Area m²</td>
+                        <td>@(warehouse.Manager?.Name ?? "Chưa phân công")</td>
+                        <td>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" 
+                                       id="status_@warehouse.ID" 
+                                       @(warehouse.IsActive ? "checked" : "")
+                                       onchange="updateStatus(@warehouse.ID, this.checked)">
+                                <label class="form-check-label" for="status_@warehouse.ID">
+                                    @(warehouse.IsActive ? "Hoạt động" : "Vô hiệu hóa")
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="/Warehouse/Edit/@warehouse.ID" class="btn btn-sm btn-primary" title="Sửa">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <button class="btn btn-sm btn-danger" onclick="deleteWarehouse(@warehouse.ID)" title="Xóa">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <a href="/Warehouse/Details/@warehouse.ID" class="btn btn-sm btn-info" title="Chi tiết">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        async function updateStatus(id, isActive) {
+            try {
+                const response = await fetch(`/api/warehouse/${id}/status`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ isActive })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const label = document.querySelector(`label[for="status_${id}"]`);
+                label.textContent = isActive ? "Hoạt động" : "Vô hiệu hóa";
+                
+                // Hiển thị thông báo thành công
+                toastr.success('Cập nhật trạng thái thành công');
+            } catch (error) {
+                console.error('Error:', error);
+                toastr.error('Có lỗi xảy ra khi cập nhật trạng thái');
+            }
+        }
+
+        async function deleteWarehouse(id) {
+            if (!confirm('Bạn có chắc chắn muốn xóa kho hàng này?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/warehouse/${id}`, {
+                    method: 'DELETE'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                toastr.success('Xóa kho hàng thành công');
+                // Reload sau 1 giây
+                setTimeout(() => window.location.reload(), 1000);
+            } catch (error) {
+                console.error('Error:', error);
+                toastr.error('Có lỗi xảy ra khi xóa kho hàng');
+            }
+        }
+    </script>
+} 
