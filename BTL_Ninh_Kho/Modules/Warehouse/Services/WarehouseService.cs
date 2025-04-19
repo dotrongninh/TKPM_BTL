@@ -1,5 +1,6 @@
-using BTL_Ninh_Kho.Models;
 using Microsoft.EntityFrameworkCore;
+using BTL_Ninh_Kho.Data;
+using BTL_Ninh_Kho.Modules.Warehouse.Models;
 
 namespace BTL_Ninh_Kho.Modules.Warehouse.Services
 {

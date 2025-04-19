@@ -84,3 +84,5 @@ F:\nam4\Thiết kế phần mềm\BTL_Ninh_Kho\BTL_Ninh_Kho\BTL_Ninh_Kho\bin\Deb
 F:\nam4\Thiết kế phần mềm\BTL_Ninh_Kho\BTL_Ninh_Kho\BTL_Ninh_Kho\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 F:\nam4\Thiết kế phần mềm\BTL_Ninh_Kho\BTL_Ninh_Kho\BTL_Ninh_Kho\obj\Debug\net8.0\BTL_Ninh_Kho.csproj.AssemblyReference.cache
 F:\nam4\Thiết kế phần mềm\BTL_Ninh_Kho\BTL_Ninh_Kho\BTL_Ninh_Kho\obj\Debug\net8.0\BTL_Ninh.3FE67202.Up2Date
+F:\nam4\Thiết kế phần mềm\BTL_Ninh_Kho\BTL_Ninh_Kho\BTL_Ninh_Kho\obj\Debug\net8.0\BTL_Ninh_Kho.sourcelink.json
+F:\nam4\Thiết kế phần mềm\BTL_Ninh_Kho\BTL_Ninh_Kho\BTL_Ninh_Kho\bin\Debug\net8.0\Serilog.dll

@@ -147,6 +147,19 @@ VALUES (N'Nguyễn Văn A', '1985-05-10', N'Nam', N'Hải Phòng', '0912345678',
 INSERT INTO tblNhanvien (sTenNV, dNgaySinh, sGioitinh, sQuequan, sSDT, sCCCD, quyen)
 VALUES (N'Trần Thị B', '1990-08-20', N'Nữ', N'Hà Nội', '0987654321', '987654321098', 2);
 
+-- Thêm nhân viên kho
+INSERT INTO tblNhanvien (sTenNV, dNgaySinh, sGioitinh, sQuequan, sSDT, sCCCD, quyen)
+VALUES (N'Lê Văn C', '1992-03-15', N'Nam', N'Đà Nẵng', '0912345679', '012345678902', 2);
+
+INSERT INTO tblNhanvien (sTenNV, dNgaySinh, sGioitinh, sQuequan, sSDT, sCCCD, quyen)
+VALUES (N'Phạm Thị D', '1993-07-25', N'Nữ', N'Hồ Chí Minh', '0987654322', '987654321099', 2);
+
+-- Thêm kế toán
+INSERT INTO tblNhanvien (sTenNV, dNgaySinh, sGioitinh, sQuequan, sSDT, sCCCD, quyen)
+VALUES (N'Hoàng Văn E', '1991-11-30', N'Nam', N'Hải Dương', '0912345680', '012345678903', 3);
+
+INSERT INTO tblNhanvien (sTenNV, dNgaySinh, sGioitinh, sQuequan, sSDT, sCCCD, quyen)
+VALUES (N'Nguyễn Thị F', '1994-02-14', N'Nữ', N'Bắc Ninh', '0987654323', '987654321100', 3);
 
 INSERT INTO tblKho (sTenkho, sDiachi, iSucchua, fDientichkho, iQuanly)
 VALUES (N'Kho A', N'Số 1 Đà Nẵng, Hải Phòng', 1000, 150.5, 1);

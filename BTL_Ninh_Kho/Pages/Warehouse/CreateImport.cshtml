@@ -1,0 +1,160 @@
+@page
+@model BTL_Ninh_Kho.Pages.Warehouse.CreateImportModel
+@{
+    ViewData["Title"] = "Tạo đơn nhập kho";
+}
+
+<div class="container-fluid">
+    <h4 class="mb-3">@ViewData["Title"]</h4>
+
+    <form method="post" id="importForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label asp-for="Input.SupplierId">Nhà cung cấp</label>
+                    <select asp-for="Input.SupplierId" asp-items="Model.Suppliers" class="form-select">
+                        <option value="">-----Chọn nhà cung cấp-----</option>
+                    </select>
+                    <span asp-validation-for="Input.SupplierId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Input.WarehouseId">Kho</label>
+                    <select asp-for="Input.WarehouseId" asp-items="Model.Warehouses" class="form-select">
+                        <option value="">-----Chọn kho-----</option>
+                    </select>
+                    <span asp-validation-for="Input.WarehouseId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <h5>Chi tiết đơn nhập</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="detailsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên hàng</th>
+                                <th>ĐVT</th>
+                                <th>SL</th>
+                                <th>Giá nhập</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="newRow">
+                                <td></td>
+                                <td>
+                                    <select id="productSelect" class="form-select">
+                                        <option value="">-----Chọn mặt hàng-----</option>
+                                        @foreach (var product in Model.Products)
+                                        {
+                                            <option value="@product.ID" data-unit="@product.Unit.Name">@product.Name</option>
+                                        }
+                                    </select>
+                                </td>
+                                <td id="unitCell"></td>
+                                <td>
+                                    <input type="number" id="quantityInput" class="form-control" min="1" />
+                                </td>
+                                <td>
+                                    <input type="number" id="priceInput" class="form-control" min="0" step="0.01" />
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="addDetail()">Thêm</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Lưu</button>
+                <a asp-page="./Index" class="btn btn-secondary">Hủy</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        let details = [];
+
+        function addDetail() {
+            const productSelect = document.getElementById('productSelect');
+            const quantityInput = document.getElementById('quantityInput');
+            const priceInput = document.getElementById('priceInput');
+            const unitCell = document.getElementById('unitCell');
+
+            if (!productSelect.value || !quantityInput.value || !priceInput.value) {
+                alert('Vui lòng nhập đầy đủ thông tin');
+                return;
+            }
+
+            const detail = {
+                productId: parseInt(productSelect.value),
+                productName: productSelect.options[productSelect.selectedIndex].text,
+                unit: unitCell.textContent,
+                quantity: parseInt(quantityInput.value),
+                importPrice: parseFloat(priceInput.value)
+            };
+
+            details.push(detail);
+            updateTable();
+            clearInputs();
+        }
+
+        function updateTable() {
+            const tbody = document.getElementById('detailsTable').getElementsByTagName('tbody')[0];
+            const rows = Array.from(tbody.getElementsByTagName('tr'));
+            
+            // Remove all rows except the input row
+            rows.forEach(row => {
+                if (row.id !== 'newRow') {
+                    row.remove();
+                }
+            });
+
+            // Add detail rows
+            details.forEach((detail, index) => {
+                const row = tbody.insertRow(0);
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${detail.productName}</td>
+                    <td>${detail.unit}</td>
+                    <td>${detail.quantity}</td>
+                    <td>${detail.importPrice}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="removeDetail(${index})">Xóa</button>
+                        <input type="hidden" name="Input.Details[${index}].ProductId" value="${detail.productId}" />
+                        <input type="hidden" name="Input.Details[${index}].Quantity" value="${detail.quantity}" />
+                        <input type="hidden" name="Input.Details[${index}].ImportPrice" value="${detail.importPrice}" />
+                    </td>
+                `;
+            });
+        }
+
+        function removeDetail(index) {
+            details.splice(index, 1);
+            updateTable();
+        }
+
+        function clearInputs() {
+            document.getElementById('productSelect').value = '';
+            document.getElementById('quantityInput').value = '';
+            document.getElementById('priceInput').value = '';
+            document.getElementById('unitCell').textContent = '';
+        }
+
+        // Update unit when product is selected
+        document.getElementById('productSelect').addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex];
+            document.getElementById('unitCell').textContent = selectedOption.dataset.unit || '';
+        });
+    </script>
+} 

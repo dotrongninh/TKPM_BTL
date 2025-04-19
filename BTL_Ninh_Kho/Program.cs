@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using BTL_Ninh_Kho.Models;
+using BTL_Ninh_Kho.Data;
+using BTL_Ninh_Kho.Modules.Warehouse.Models;
 using BTL_Ninh_Kho.Modules.Warehouse.Services;
 
 var builder = WebApplication.CreateBuilder(args);

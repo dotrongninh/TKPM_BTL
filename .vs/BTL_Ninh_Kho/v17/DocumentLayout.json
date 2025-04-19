@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "F:\\nam4\\Thi\u1EBFt k\u1EBF ph\u1EA7n m\u1EC1m\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FD9D7C5B-9AAB-44FA-B0D2-33DB51AFC755}|BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj|f:\\nam4\\thi\u1EBFt k\u1EBF ph\u1EA7n m\u1EC1m\\btl_ninh_kho\\btl_ninh_kho\\btl_ninh_kho\\pages\\warehouse\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FD9D7C5B-9AAB-44FA-B0D2-33DB51AFC755}|BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj|solutionrelative:btl_ninh_kho\\pages\\warehouse\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FD9D7C5B-9AAB-44FA-B0D2-33DB51AFC755}|BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj|f:\\nam4\\thi\u1EBFt k\u1EBF ph\u1EA7n m\u1EC1m\\btl_ninh_kho\\btl_ninh_kho\\btl_ninh_kho\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FD9D7C5B-9AAB-44FA-B0D2-33DB51AFC755}|BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj|solutionrelative:btl_ninh_kho\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,18 +65,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\.vsdbgsrc\\f65f88779aa8cb24647150198816e495fc5d72f38fd2b017eb3dd5e8e00d0e51\\Program.cs",
-              "ToolTip": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\.vsdbgsrc\\f65f88779aa8cb24647150198816e495fc5d72f38fd2b017eb3dd5e8e00d0e51\\Program.cs [Read Only]",
-              "ViewState": "AQIAABoAAAAAAAAAAAAwwCcAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T14:39:57.79Z",
-              "EditorCaption": " [Read Only]"
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\nam4\\Thi\u1EBFt k\u1EBF ph\u1EA7n m\u1EC1m\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\Pages\\Warehouse\\Index.cshtml",
+              "RelativeDocumentMoniker": "BTL_Ninh_Kho\\Pages\\Warehouse\\Index.cshtml",
+              "ToolTip": "F:\\nam4\\Thi\u1EBFt k\u1EBF ph\u1EA7n m\u1EC1m\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\Pages\\Warehouse\\Index.cshtml",
+              "RelativeToolTip": "BTL_Ninh_Kho\\Pages\\Warehouse\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T15:07:12.626Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\nam4\\Thi\u1EBFt k\u1EBF ph\u1EA7n m\u1EC1m\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\Program.cs",
               "RelativeDocumentMoniker": "BTL_Ninh_Kho\\Program.cs",
@@ -85,7 +91,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\.vsdbgsrc\\f65f88779aa8cb24647150198816e495fc5d72f38fd2b017eb3dd5e8e00d0e51\\Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\.vsdbgsrc\\f65f88779aa8cb24647150198816e495fc5d72f38fd2b017eb3dd5e8e00d0e51\\Program.cs [Read Only]",
+              "ViewState": "AQIAABoAAAAAAAAAAAAwwCcAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T14:39:57.79Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "WarehouseService.cs",
               "DocumentMoniker": "F:\\nam4\\Thi\u1EBFt k\u1EBF ph\u1EA7n m\u1EC1m\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\Modules\\Warehouse\\Services\\WarehouseService.cs",
               "RelativeDocumentMoniker": "BTL_Ninh_Kho\\Modules\\Warehouse\\Services\\WarehouseService.cs",
@@ -93,12 +110,11 @@
               "RelativeToolTip": "BTL_Ninh_Kho\\Modules\\Warehouse\\Services\\WarehouseService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T14:38:46.248Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T14:38:46.248Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "IWarehouseService.cs",
               "DocumentMoniker": "F:\\nam4\\Thi\u1EBFt k\u1EBF ph\u1EA7n m\u1EC1m\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\Modules\\Warehouse\\Services\\IWarehouseService.cs",
               "RelativeDocumentMoniker": "BTL_Ninh_Kho\\Modules\\Warehouse\\Services\\IWarehouseService.cs",
@@ -106,8 +122,7 @@
               "RelativeToolTip": "BTL_Ninh_Kho\\Modules\\Warehouse\\Services\\IWarehouseService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T14:38:44.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T14:38:44.364Z"
             }
           ]
         }
