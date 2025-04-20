@@ -10,5 +10,6 @@ namespace BTL_Ninh_Kho.Modules.Warehouse.Services
         Task<Models.Warehouse> UpdateWarehouseAsync(Models.Warehouse warehouse);
         Task<bool> DeleteWarehouseAsync(int id);
         Task<bool> UpdateWarehouseStatusAsync(int id, bool isActive);
+        Task<bool> UpdateImportStatusAsync(int id, int status);
     }
 } 

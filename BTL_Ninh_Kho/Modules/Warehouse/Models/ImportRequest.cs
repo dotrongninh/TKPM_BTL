@@ -14,7 +14,9 @@ namespace BTL_Ninh_Kho.Modules.Warehouse.Models
         
         public DateTime ImportDate { get; set; } = DateTime.Now;
         
-        public int Status { get; set; } = 1; // Mặc định là Chờ duyệt
+        public int Status { get; set; }
+        public Supplier Supplier { get; set; }
+        public Warehouse Warehouse { get; set; }
 
         public List<ImportRequestDetail> Details { get; set; } = new List<ImportRequestDetail>();
     }

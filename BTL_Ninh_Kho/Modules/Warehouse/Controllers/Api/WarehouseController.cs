@@ -34,10 +34,26 @@ namespace BTL_Ninh_Kho.Controllers.Api
 
             return Ok();
         }
-    }
+    
+        [HttpPut("{id}/update-status")]
+        public async Task<IActionResult> UpdateImportStatus(int id, [FromBody] UpdateImportStatusRequest request)
+        {
+            var result = await _warehouseService.UpdateImportStatusAsync(id, request.Status);
+            if (!result)
+                return NotFound();
 
-    public class UpdateStatusRequest
-    {
-        public bool IsActive { get; set; }
+            return Ok();
+        }
+
+        public class UpdateImportStatusRequest
+        {
+            public int Status { get; set; }
+        }
+
+
+        public class UpdateStatusRequest
+        {
+            public bool IsActive { get; set; }
+        }
     }
 } 

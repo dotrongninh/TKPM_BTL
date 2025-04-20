@@ -68,6 +68,15 @@ namespace BTL_Ninh_Kho.Data
 
             modelBuilder.Entity<ImportRequestDetail>()
                 .Property(i => i.ImportPrice).HasColumnName("fGianhap");
+            modelBuilder.Entity<ImportRequest>()
+                .HasOne(ir => ir.Supplier)
+                .WithMany()
+                .HasForeignKey(ir => ir.SupplierId);
+
+            modelBuilder.Entity<ImportRequest>()
+                .HasOne(ir => ir.Warehouse)
+                .WithMany()
+                .HasForeignKey(ir => ir.WarehouseId);
         }
     }
 } 
