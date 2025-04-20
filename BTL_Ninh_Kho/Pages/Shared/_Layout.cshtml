@@ -79,6 +79,75 @@
 
 
             </ul>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="bg-light border-end sidebar vh-100 p-3" style="width: 250px;">
+            <h4 class="mb-4">Quản lý kho</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">
+                        <i class="fas fa-home"></i> Trang chủ
+                    </a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="collapse" href="#nhapkhoSubmenu" role="button">
+                        Quản lý kho hàng
+                    </a>
+                    <div class="collapse" id="nhapkhoSubmenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item"><a class="nav-link" asp-page="/Warehouse/Index">Danh sách kho hàng</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Phiếu xuất kho</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Phiếu nhập kho</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Phiếu điều chuyển kho</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-page="/Warehouse/Create">Tạo đơn nhập kho với nhà cung cấp</p></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="collapse" href="#nccSubmenu" role="button">
+                        Quản lý nhà cung cấp
+                    </a>
+                    <div class="collapse" id="nccSubmenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item"><a class="nav-link" href="#"">Danh sách nhà cung cấp</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="collapse" href="#hanghoaSubmenu" role="button">
+                        Quản lý hàng hóa
+                    </a>
+                    <div class="collapse" id="hanghoaSubmenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item"><a class="nav-link" href="#"">Hàng hóa</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"">Loại hàng</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"">Đơn vị tính</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="collapse" href="#baocaoSubmenu" role="button">
+                        Báo cáo kiểm kê
+                    </a>
+                    <div class="collapse" id="baocaoSubmenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item"><a class="nav-link" href="#"">Nhập Hàng</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"">Xuất hàng</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"">Kiểm kê</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"">Đơn hàng</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link" href="#">
+                        Quản lý nhân viên
+                    </a>
+
+                </li>
+
+
+            </ul>
         </nav>
 
         <!-- Main content -->
