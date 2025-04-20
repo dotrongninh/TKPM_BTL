@@ -17,8 +17,10 @@ namespace BTL_Ninh_Kho.Data
         public DbSet<Unit> Units { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<ImportRequest> ImportRequests { get; set; }
-        public DbSet<ImportRequestDetail> ImportRequestDetails { get; set; }
+        public DbSet<ExportRequest> ExportRequests { get; set; }
 
+        public DbSet<ImportRequestDetail> ImportRequestDetails { get; set; }
+        public DbSet<ExportRequestDetail> ExportRequestDetails { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -72,6 +74,39 @@ namespace BTL_Ninh_Kho.Data
                 .HasOne(ir => ir.Supplier)
                 .WithMany()
                 .HasForeignKey(ir => ir.SupplierId);
+
+            modelBuilder.Entity<ImportRequest>()
+                .HasOne(ir => ir.Warehouse)
+                .WithMany()
+                .HasForeignKey(ir => ir.WarehouseId);
+
+            // Cấu hình cho ExportRequest
+            modelBuilder.Entity<ExportRequest>()
+                .ToTable("tblDonxuat")
+                .Property(i => i.ID).HasColumnName("ID");
+
+            modelBuilder.Entity<ExportRequest>()
+                .Property(i => i.WarehouseId).HasColumnName("iKho");
+
+            modelBuilder.Entity<ExportRequest>()
+                .Property(i => i.ExportDate).HasColumnName("dNgayxuat");
+
+            modelBuilder.Entity<ExportRequest>()
+                .Property(i => i.Status).HasColumnName("iTrangthai");
+
+            // Cấu hình cho ExportRequestDetail
+            modelBuilder.Entity<ExportRequestDetail>()
+                .ToTable("tblChitiet_donxuat")
+                .Property(i => i.ID).HasColumnName("ID");
+
+            modelBuilder.Entity<ExportRequestDetail>()
+                .Property(i => i.ExportRequestId).HasColumnName("iDonxuat");
+
+            modelBuilder.Entity<ExportRequestDetail>()
+                .Property(i => i.ProductId).HasColumnName("iHanghoa");
+
+            modelBuilder.Entity<ExportRequestDetail>()
+                .Property(i => i.Quantity).HasColumnName("iSoluong");
 
             modelBuilder.Entity<ImportRequest>()
                 .HasOne(ir => ir.Warehouse)

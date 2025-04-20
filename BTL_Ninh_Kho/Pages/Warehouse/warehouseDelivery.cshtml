@@ -1,0 +1,112 @@
+@page
+@model BTL_Ninh_Kho.Pages.Warehouse.ExportModel
+@{
+    ViewData["Title"] = "Thêm mới phiếu nhập kho";
+}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <!-- Form nhập phiếu -->
+        <div class="col-md-6">
+            <h5><strong>Thêm mới phiếu xuất kho</strong></h5>
+
+            <form method="post" asp-page-handler="CreateExport">
+                <div class="mb-3">
+                    <i></i>
+                    <select id="exportDropdown" name = "id" class="form-select">
+                        <option value="">-----Chọn đơn xuất kho-----</option>
+                        @foreach (var item in Model.ListExportWarehouse)
+                        {
+                            <option value="@item.ID">@item.ID</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Input.WarehouseId">Kho xuất</label>
+                    <select id="" name = "" class="form-select">
+                        <option value="">-----Chọn kho xuất-----</option>
+                        @foreach (var item in Model.ListExportWarehouse)
+                        {
+                            <option value="@item.ID">@item.Warehouse.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Quét mã QR để xuất kho</label>
+                    <div class="border p-3 bg-light">
+                        <button type="button" class="btn btn-dark mb-2">Tắt Camera</button>
+                        <div class="border bg-white" style="height:200px;"></div>
+                    </div>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label" for="ConfirmInfo">
+                        Đã kiểm tra tất cả thông tin
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Xuất kho</button>
+            </form>
+            
+        </div>
+
+        <!-- Bảng chi tiết phiếu nhập -->
+        <div class="col-md-6">
+            <h5><strong>Chi tiết phiếu nhập</strong></h5>
+            <table id="exportDetailsTable" class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Tên hàng</th>
+                        <th>ĐVT</th>
+                        <th>SL</th>
+                        <th>Thùng</th>
+                        <th>Ghi chú</th>
+                        <th>Xóa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="7" class="text-center">Không có dữ liệu</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+    </div>
+</div>
+@section Scripts {
+    <script>
+    document.getElementById("exportDropdown").addEventListener("change", function () {
+        const importId = this.value;
+    
+        if (importId) {
+            // Gọi endpoint để lấy chi tiết đơn nhập
+            fetch(`/Warehouse/warehouseDelivery?handler=ImportDetails&id=${importId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    const tbody = document.querySelector("#exportDetailsTable tbody");
+                    if (tbody) {
+                        tbody.innerHTML = html;
+                    } else {
+                        console.error("Phần tử #exportDetailsTable tbody không tồn tại.");
+                    }
+                })
+                .catch(error => console.error("Error fetching import details:", error));
+        } else {
+            // Xóa dữ liệu nếu không chọn đơn nhập
+            const tbody = document.querySelector("#exportDetailsTable tbody");
+            if (tbody) {
+                tbody.innerHTML = "<tr><td colspan='7' class='text-center'>Không có dữ liệu</td></tr>";
+            }
+        }
+    });   
+    </script>
+}
+<!-- @section Scripts { -->

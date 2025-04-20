@@ -1,0 +1,47 @@
+@page
+@model BTL_Ninh_Kho.Pages.Warehouse.ExportModel
+@{
+    ViewData["Title"] = "Danh sách xuất kho";
+}
+
+<div class="mt-3">
+    <h5 class="fw-bold">Danh sách phiếu xuất kho</h5>
+    <div class="d-flex">
+        <button class="tab-btn active">Đã xuất kho</button>
+        <button class="tab-btn">Đã hủy bỏ</button>
+    </div>
+
+    <div class="tab-container mt-2">
+       
+        <a href="/Warehouse/warehouseDelivery"> <button class="btn btn-danger mb-3">Thêm mới phiếu xuất kho</button></a>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID phiếu xuất</th>
+                    <th>Kho xuất</th>
+                    <th>Ngày xuất</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.ListExport != null && Model.ListExport.Any())
+                {
+                    foreach (var export in Model.ListExport)
+                    {
+                        <tr>
+                            <td>@export.ID</td>
+                            <td>@export.Warehouse.Name</td>
+                            <td>@export.ExportDate.ToString("dd/MM/yyyy")</td>  
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6" class="text-center">Không có dữ liệu</td>
+                    </tr>
+                }
+            </tbody>        
+        </table>
+    </div>
+</div>
