@@ -17,6 +17,10 @@ namespace BTL_Ninh_Kho.Modules.Warehouse.Models
         public int Status { get; set; } = 1; // Mặc định là Chờ duyệt
 
         public List<ImportRequestDetail> Details { get; set; } = new List<ImportRequestDetail>();
+
+        // Navigation properties
+        public Supplier Supplier { get; set; }
+        public BTL_Ninh_Kho.Modules.Warehouse.Models.Warehouse Warehouse { get; set; }
     }
 
     public class ImportRequestDetail

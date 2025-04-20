@@ -1,0 +1,100 @@
+@page "{id:int}"
+@model BTL_Ninh_Kho.Pages.Warehouse.ImportDetailModel
+@{
+    ViewData["Title"] = "Chi tiết đơn nhập";
+}
+
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">@ViewData["Title"]</h6>
+            <a href="javascript:history.back()" class="btn btn-sm btn-secondary">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h5>Thông tin đơn nhập</h5>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Mã đơn nhập:</th>
+                            <td>@Model.ImportRequest.ID</td>
+                        </tr>
+                        <tr>
+                            <th>Nhà cung cấp:</th>
+                            <td>@Model.ImportRequest.Supplier.Name</td>
+                        </tr>
+                        <tr>
+                            <th>Kho nhập:</th>
+                            <td>@Model.ImportRequest.Warehouse.Name</td>
+                        </tr>
+                        <tr>
+                            <th>Ngày nhập:</th>
+                            <td>@Model.ImportRequest.ImportDate.ToString("dd/MM/yyyy")</td>
+                        </tr>
+                        <tr>
+                            <th>Trạng thái:</th>
+                            <td>
+                                @switch (Model.ImportRequest.Status)
+                                {
+                                    case 1:
+                                        <span class="badge bg-warning">Chờ duyệt</span>
+                                        break;
+                                    case 2:
+                                        <span class="badge bg-success">Đã duyệt</span>
+                                        break;
+                                    case 3:
+                                        <span class="badge bg-danger">Đã hủy</span>
+                                        break;
+                                    default:
+                                        <span class="badge bg-secondary">Không xác định</span>
+                                        break;
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h5>Chi tiết hàng hóa</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên hàng hóa</th>
+                                    <th>Đơn vị tính</th>
+                                    <th>Số lượng</th>
+                                    <th>Đơn giá</th>
+                                    <th>Thành tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var detail in Model.ImportRequest.Details)
+                                {
+                                    <tr>
+                                        <td>@(Model.ImportRequest.Details.IndexOf(detail) + 1)</td>
+                                        <td>@detail.Product.Name</td>
+                                        <td>@detail.Product.Unit.Name</td>
+                                        <td>@detail.Quantity</td>
+                                        <td>@detail.ImportPrice.ToString("N0")</td>
+                                        <td>@((detail.Quantity * detail.ImportPrice).ToString("N0"))</td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5" class="text-end"><strong>Tổng tiền:</strong></td>
+                                    <td><strong>@Model.ImportRequest.Details.Sum(d => d.Quantity * d.ImportPrice).ToString("N0")</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

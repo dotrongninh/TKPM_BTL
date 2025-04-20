@@ -12,7 +12,7 @@ namespace BTL_Ninh_Kho.Pages.Warehouse
             _warehouseService = warehouseService;
         }
 
-        public IEnumerable<BTL_Ninh_Kho.Modules.Warehouse.Models.Warehouse> Warehouses { get; set; }
+        public IEnumerable<BTL_Ninh_Kho.Modules.Warehouse.Models.Warehouse>? Warehouses { get; set; }
 
         public async Task OnGetAsync()
         {

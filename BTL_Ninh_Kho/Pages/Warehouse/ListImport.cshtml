@@ -1,0 +1,73 @@
+@page
+@model BTL_Ninh_Kho.Pages.Warehouse.ListImportModel
+@{
+    ViewData["Title"] = "Danh sách nhập kho";
+}
+
+<div class="mt-3">
+    <h5 class="fw-bold">Danh sách phiếu nhập kho</h5>
+    <div class="d-flex">
+        <button class="tab-btn active">Đã nhập kho</button>
+        <button class="tab-btn">Đã hủy bỏ</button>
+    </div>
+
+    <div class="tab-container mt-2">
+       
+        <a href="/Warehouse/warehouseReceipt"> <button class="btn btn-danger mb-3">Thêm mới phiếu nhập kho</button></a>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID phiếu nhập</th>
+                    <th>ID đơn nhập</th>
+                    <th>Kho nhập</th>
+                    <th>Ngày nhập</th>
+                    <th>Trạng thái đơn</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.ListImport != null && Model.ListImport.Any())
+                {
+                    foreach (var import in Model.ListImport)
+                    {
+                        <tr>
+                            <td>@import.ID</td>
+                            <td>@import.ID</td>
+                            <td>@import.Warehouse.Name</td>
+                            <td>@import.ImportDate.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                @switch (import.Status)
+                                {
+                                    case 1:
+                                        <span class="badge bg-warning">Chờ duyệt</span>
+                                        break;
+                                    case 2:
+                                        <span class="badge bg-success">Đã duyệt</span>
+                                        break;
+                                    case 3:
+                                        <span class="badge bg-danger">Đã hủy</span>
+                                        break;
+                                    default:
+                                        <span class="badge bg-secondary">Không xác định</span>
+                                        break;
+                                }
+                            </td>
+                            <td>
+                                <a href="/Warehouse/ImportDetail/@import.ID" class="btn btn-info btn-sm">
+                                    <i class="fas fa-eye"></i> Xem chi tiết
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6" class="text-center">Không có dữ liệu</td>
+                    </tr>
+                }
+            </tbody>        
+        </table>
+    </div>
+</div> 

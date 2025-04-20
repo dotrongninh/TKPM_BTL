@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\nam4\\Thiết kế phần mềm\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj": {}
+    "F:\\nam4\\Thiết kế phần mềm\\BTL_3\\TKPM_BTL\\BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj": {}
   },
   "projects": {
-    "F:\\nam4\\Thiết kế phần mềm\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj": {
+    "F:\\nam4\\Thiết kế phần mềm\\BTL_3\\TKPM_BTL\\BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\nam4\\Thiết kế phần mềm\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj",
+        "projectUniqueName": "F:\\nam4\\Thiết kế phần mềm\\BTL_3\\TKPM_BTL\\BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj",
         "projectName": "BTL_Ninh_Kho",
-        "projectPath": "F:\\nam4\\Thiết kế phần mềm\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj",
+        "projectPath": "F:\\nam4\\Thiết kế phần mềm\\BTL_3\\TKPM_BTL\\BTL_Ninh_Kho\\BTL_Ninh_Kho.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "F:\\nam4\\Thiết kế phần mềm\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\BTL_Ninh_Kho\\obj\\",
+        "outputPath": "F:\\nam4\\Thiết kế phần mềm\\BTL_3\\TKPM_BTL\\BTL_Ninh_Kho\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

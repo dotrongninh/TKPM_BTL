@@ -52,6 +52,17 @@ namespace BTL_Ninh_Kho.Data
             modelBuilder.Entity<ImportRequest>()
                 .Property(i => i.Status).HasColumnName("iTrangthai");
 
+            // Cấu hình quan hệ cho ImportRequest
+            modelBuilder.Entity<ImportRequest>()
+                .HasOne(i => i.Supplier)
+                .WithMany()
+                .HasForeignKey(i => i.SupplierId);
+
+            modelBuilder.Entity<ImportRequest>()
+                .HasOne(i => i.Warehouse)
+                .WithMany()
+                .HasForeignKey(i => i.WarehouseId);
+
             // Cấu hình cho ImportRequestDetail
             modelBuilder.Entity<ImportRequestDetail>()
                 .ToTable("tblChitiet_donnhap")
@@ -68,6 +79,12 @@ namespace BTL_Ninh_Kho.Data
 
             modelBuilder.Entity<ImportRequestDetail>()
                 .Property(i => i.ImportPrice).HasColumnName("fGianhap");
+
+            // Cấu hình quan hệ cho ImportRequestDetail
+            modelBuilder.Entity<ImportRequestDetail>()
+                .HasOne(d => d.Product)
+                .WithMany()
+                .HasForeignKey(d => d.ProductId);
         }
     }
 } 
