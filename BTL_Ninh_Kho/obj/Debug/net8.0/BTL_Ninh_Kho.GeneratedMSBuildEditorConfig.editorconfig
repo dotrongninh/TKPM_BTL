@@ -9,51 +9,53 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BTL_Ninh_Kho
 build_property.RootNamespace = BTL_Ninh_Kho
-build_property.ProjectDir = F:\nam4\Thiết kế phần mềm\BTL_Ninh_Kho\BTL_Ninh_Kho\BTL_Ninh_Kho\
+build_property.ProjectDir = D:\Chuyen_nganh\TKPM\TKPM_BTL\BTL_Ninh_Kho\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\nam4\Thiết kế phần mềm\BTL_Ninh_Kho\BTL_Ninh_Kho\BTL_Ninh_Kho
+build_property.MSBuildProjectDirectory = D:\Chuyen_nganh\TKPM\TKPM_BTL\BTL_Ninh_Kho
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[F:/nam4/Thiết kế phần mềm/BTL_Ninh_Kho/BTL_Ninh_Kho/BTL_Ninh_Kho/Pages/Error.cshtml]
+[D:/Chuyen_nganh/TKPM/TKPM_BTL/BTL_Ninh_Kho/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/nam4/Thiết kế phần mềm/BTL_Ninh_Kho/BTL_Ninh_Kho/BTL_Ninh_Kho/Pages/Index.cshtml]
+[D:/Chuyen_nganh/TKPM/TKPM_BTL/BTL_Ninh_Kho/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/nam4/Thiết kế phần mềm/BTL_Ninh_Kho/BTL_Ninh_Kho/BTL_Ninh_Kho/Pages/Privacy.cshtml]
+[D:/Chuyen_nganh/TKPM/TKPM_BTL/BTL_Ninh_Kho/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/nam4/Thiết kế phần mềm/BTL_Ninh_Kho/BTL_Ninh_Kho/BTL_Ninh_Kho/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Chuyen_nganh/TKPM/TKPM_BTL/BTL_Ninh_Kho/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/nam4/Thiết kế phần mềm/BTL_Ninh_Kho/BTL_Ninh_Kho/BTL_Ninh_Kho/Pages/Warehouse/Create.cshtml]
+[D:/Chuyen_nganh/TKPM/TKPM_BTL/BTL_Ninh_Kho/Pages/Warehouse/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2FyZWhvdXNlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/nam4/Thiết kế phần mềm/BTL_Ninh_Kho/BTL_Ninh_Kho/BTL_Ninh_Kho/Pages/Warehouse/CreateImport.cshtml]
+[D:/Chuyen_nganh/TKPM/TKPM_BTL/BTL_Ninh_Kho/Pages/Warehouse/CreateImport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2FyZWhvdXNlXENyZWF0ZUltcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/nam4/Thiết kế phần mềm/BTL_Ninh_Kho/BTL_Ninh_Kho/BTL_Ninh_Kho/Pages/Warehouse/Index.cshtml]
+[D:/Chuyen_nganh/TKPM/TKPM_BTL/BTL_Ninh_Kho/Pages/Warehouse/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2FyZWhvdXNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/nam4/Thiết kế phần mềm/BTL_Ninh_Kho/BTL_Ninh_Kho/BTL_Ninh_Kho/Pages/_ViewImports.cshtml]
+[D:/Chuyen_nganh/TKPM/TKPM_BTL/BTL_Ninh_Kho/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/nam4/Thiết kế phần mềm/BTL_Ninh_Kho/BTL_Ninh_Kho/BTL_Ninh_Kho/Pages/_ViewStart.cshtml]
+[D:/Chuyen_nganh/TKPM/TKPM_BTL/BTL_Ninh_Kho/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/nam4/Thiết kế phần mềm/BTL_Ninh_Kho/BTL_Ninh_Kho/BTL_Ninh_Kho/Pages/Shared/_Layout.cshtml]
+[D:/Chuyen_nganh/TKPM/TKPM_BTL/BTL_Ninh_Kho/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-g6eflcc7h2
