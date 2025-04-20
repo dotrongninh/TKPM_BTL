@@ -30,6 +30,9 @@ namespace BTL_Ninh_Kho.Pages.Warehouse
         public List<BTL_Ninh_Kho.Modules.Warehouse.Models.ImportRequest> ListImports { get; set; }
         public List<BTL_Ninh_Kho.Modules.Warehouse.Models.ImportRequest> ListImportWarehouse { get; set; }
 
+        public List<BTL_Ninh_Kho.Modules.Warehouse.Models.ImportRequest> ListExport { get; set; }
+
+
         public async Task OnGetAsync()
         {
             // Load danh sách nhà cung cấp
@@ -127,7 +130,33 @@ namespace BTL_Ninh_Kho.Pages.Warehouse
                 warehouseId = importRequest.WarehouseId
             });
         }
+
+        public async Task<IActionResult> OnGetImportDetailsAsync(int id)
+        {
+            var importRequest = await _context.ImportRequests
+                .Include(ir => ir.Details)
+                    .ThenInclude(d => d.Product)
+                .FirstOrDefaultAsync(ir => ir.ID == id);
         
+            if (importRequest == null || importRequest.Details == null || !importRequest.Details.Any())
+            {
+                return Content("<tr><td colspan='5' class='text-center'>Không có dữ liệu</td></tr>", "text/html");
+            }
+        
+            var html = new System.Text.StringBuilder();
+            foreach (var detail in importRequest.Details)
+            {
+                html.Append("<tr>");
+                html.Append($"<td>{detail.Product?.Name}</td>");
+                html.Append($"<td>{detail.Product?.Unit}</td>");
+                html.Append($"<td>{detail.Quantity}</td>");
+                html.Append($"<td>{detail.ImportPrice.ToString("N0")}</td>");
+                html.Append($"<td>{(detail.Quantity * detail.ImportPrice).ToString("N0")}</td>");
+                html.Append("</tr>");
+            }
+        
+            return Content(html.ToString(), "text/html");
+        }
         public async Task<IActionResult> OnPostUpdateStatusAsync(int id)
         {
             if (id <= 0)
