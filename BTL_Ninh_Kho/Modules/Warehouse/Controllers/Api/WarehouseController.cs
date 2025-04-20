@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using BTL_Ninh_Kho.Modules.Warehouse.Services;
-using BTL_Ninh_Kho.Modules.Warehouse.Models;
 
 namespace BTL_Ninh_Kho.Controllers.Api
 {
