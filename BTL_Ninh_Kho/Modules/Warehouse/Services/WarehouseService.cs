@@ -58,5 +58,16 @@ namespace BTL_Ninh_Kho.Modules.Warehouse.Services
             await _context.SaveChangesAsync();
             return true;
         }
+
+        public async Task<bool> UpdateImportStatusAsync(int id, int status)
+        {
+            var importRequest = await _context.ImportRequests.FirstOrDefaultAsync(ir => ir.ID == id);
+            if (importRequest == null)
+                return false;
+
+            importRequest.Status = status;
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 } 
